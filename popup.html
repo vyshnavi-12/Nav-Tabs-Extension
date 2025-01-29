@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav-Tabs</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=move_group,search" />
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="logo">
+                <span class="material-symbols-outlined" style="font-size: 30px;">move_group</span>
+                <h1>Nav-Tabs</h1>
+            </div>
+            <div class="stats">
+                <span id="window-count">0 windows</span>
+                <span class="separator">•</span>
+                <span id="tab-count">0 tabs</span>
+            </div>
+        </header>
+
+        <div class="search-bar">
+            <span class="material-symbols-outlined search-icon">search</span>
+            <input type="text" id="search" placeholder="Search across all windows and tabs...">
+            <i class="fas fa-times" id="clear-search"></i>
+        </div>
+
+        <div class="window-controls">
+            <button class="window-btn active" id="all-windows">
+                <i class="fab fa-windows"></i>
+                <span>All Windows</span>
+            </button>
+            <button class="window-btn" id="current-window">
+                <i class="fab fa-chrome"></i>
+                <span>Current</span>
+            </button>
+        </div>
+
+        <div class="action-bar">
+            <button class="action-btn" id="new-window">
+                <i class="fas fa-plus-square"></i>
+                <span>New</span>
+            </button>
+            <button class="action-btn" id="merge-windows">
+                <i class="fas fa-compress"></i>
+                <span>Merge</span>
+            </button>
+            <button class="action-btn" id="sort-tabs">
+                <i class="fas fa-sort-alpha-down"></i>
+                <span>Sort</span>
+            </button>
+        </div>
+
+        <main class="main-content">
+            <div id="windows-list" class="windows-list"></div>
+            <div id="tab-list" class="tab-list"></div>
+        </main>
+
+        <!-- Merge Window Selection Modal -->
+        <div id="merge-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" id="close-merge-modal">&times;</span>
+                <h2>Select Windows to Merge</h2>
+                <div id="merge-window-list" class="merge-window-list"></div>
+                <button class="merge-btn" id="confirm-merge">Merge Selected</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="window-manager.js"></script>
+    <script src="tab-manager.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>

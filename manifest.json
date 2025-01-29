@@ -1,0 +1,31 @@
+{
+    "name": "Nav-Tabs",
+    "version": "1.1",
+    "manifest_version": 3,
+    "description": "Effortlessly control tabs and windows at your fingertips.",
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "48": "icons/nav-tabs-logo-48.png"
+        }
+    },
+    "icons": {
+        "128": "icons/nav-tabs-logo-128.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content_script.js"]
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "windows"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ]
+}
